@@ -1,4 +1,5 @@
-<include a CircleCI status badge, here>
+[![CircleCI](https://circleci.com/gh/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-/tree/main.svg?style=svg)](https://circleci.com/gh/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-/tree/main)
+
 
 ## Project Overview
 
@@ -23,6 +24,14 @@ You can find a detailed [project rubric, here](https://review.udacity.com/#!/rub
 
 ---
 
+
+## project files:
+- circleCI configurations that is in .circleci/config
+- docker file that inclues docker configurations.
+- scripts to run and upload docker images, in run_docker.sh, upload_docker.sh
+- kubernetes script to run kubernetes
+- output of the console results of running docker and kubernetes in docker_out.txt and kubernetes_out.txt
+- Makefile that is very helpful file to run scripts to setup, install, test and linting
 ## Setup the Environment
 
 * Create a virtualenv with Python 3.7 and activate it. Refer to this link for help on specifying the Python version in the virtualenv. 
