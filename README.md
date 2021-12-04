@@ -1,4 +1,4 @@
-[![CircleCI](https://circleci.com/gh/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-.svg?style=shield)](https://circleci.com/pipelines/github/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-)
+[![CircleCI](https://circleci.com/gh/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-/tree/main.svg?style=svg)](https://circleci.com/gh/abdo2017/Operationalize-a-Machine-Learning-Microservice-API-/tree/main)
 
 
 ## Project Overview
