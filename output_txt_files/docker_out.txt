@@ -1,9 +1,137 @@
-[2021-12-04 06:53:44,821] INFO in app: JSON payload: 
+####################################################################################
+#############    make_prediction.sh output                             #############
+####################################################################################
+Port: 8000
+{
+  "prediction": [
+    20.35373177134412
+  ]
+}
+
+
+
+####################################################################################
+#############    run_docker.sh output                                  #############
+####################################################################################
+
+Sending build context to Docker daemon  101.4MB
+Step 1/6 : FROM python:3.7.3-stretch
+3.7.3-stretch: Pulling from library/python
+6f2f362378c5: Pull complete 
+494c27a8a6b8: Pull complete 
+7596bb83081b: Pull complete 
+372744b62d49: Pull complete 
+615db220d76c: Pull complete 
+39aa0c89bda1: Pull complete 
+ac275157d894: Pull complete 
+98d16dec829a: Pull complete 
+c8514b1c6524: Pull complete 
+Digest: sha256:205cafadbb7f0c48f2a6d655eb100a9675aa85e6e73958860f488406cce09779
+Status: Downloaded newer image for python:3.7.3-stretch
+ ---> 34a518642c76
+Step 2/6 : WORKDIR /app
+ ---> Running in 3370a166ddfe
+Removing intermediate container 3370a166ddfe
+ ---> 9b56fdd176e1
+Step 3/6 : COPY . app.py /app/
+ ---> 8e0a0cb415de
+Step 4/6 : RUN pip install --upgrade pip &&    pip install --trusted-host pypi.python.org -r requirements.txt
+ ---> Running in c4a28bb37483
+Collecting pip
+  Downloading https://files.pythonhosted.org/packages/a4/6d/6463d49a933f547439d6b5b98b46af8742cc03ae83543e4d7688c2420f8b/pip-21.3.1-py3-none-any.whl (1.7MB)
+Installing collected packages: pip
+  Found existing installation: pip 19.1.1
+    Uninstalling pip-19.1.1:
+      Successfully uninstalled pip-19.1.1
+Successfully installed pip-21.3.1
+Collecting Click==7.0
+  Downloading Click-7.0-py2.py3-none-any.whl (81 kB)
+Collecting Flask==1.0.2
+  Downloading Flask-1.0.2-py2.py3-none-any.whl (91 kB)
+Collecting itsdangerous==1.1.0
+  Downloading itsdangerous-1.1.0-py2.py3-none-any.whl (16 kB)
+Collecting Jinja2==2.10.3
+  Downloading Jinja2-2.10.3-py2.py3-none-any.whl (125 kB)
+Collecting MarkupSafe==1.1.1
+  Downloading MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl (33 kB)
+Collecting numpy==1.17.2
+  Downloading numpy-1.17.2-cp37-cp37m-manylinux1_x86_64.whl (20.3 MB)
+Collecting pandas==0.24.2
+  Downloading pandas-0.24.2-cp37-cp37m-manylinux1_x86_64.whl (10.1 MB)
+Collecting python-dateutil==2.8.0
+  Downloading python_dateutil-2.8.0-py2.py3-none-any.whl (226 kB)
+Collecting pytz==2019.3
+  Downloading pytz-2019.3-py2.py3-none-any.whl (509 kB)
+Collecting scikit-learn==0.20.3
+  Downloading scikit_learn-0.20.3-cp37-cp37m-manylinux1_x86_64.whl (5.4 MB)
+Collecting scipy==1.3.1
+  Downloading scipy-1.3.1-cp37-cp37m-manylinux1_x86_64.whl (25.2 MB)
+Collecting six==1.12.0
+  Downloading six-1.12.0-py2.py3-none-any.whl (10 kB)
+Collecting Werkzeug==0.16.0
+  Downloading Werkzeug-0.16.0-py2.py3-none-any.whl (327 kB)
+Collecting pylint==2.4.4
+  Downloading pylint-2.4.4-py3-none-any.whl (302 kB)
+Collecting astroid<2.4,>=2.3.0
+  Downloading astroid-2.3.3-py3-none-any.whl (205 kB)
+Collecting mccabe<0.7,>=0.6
+  Downloading mccabe-0.6.1-py2.py3-none-any.whl (8.6 kB)
+Collecting isort<5,>=4.2.5
+  Downloading isort-4.3.21-py2.py3-none-any.whl (42 kB)
+Collecting lazy-object-proxy==1.4.*
+  Downloading lazy_object_proxy-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (56 kB)
+Collecting wrapt==1.11.*
+  Downloading wrapt-1.11.2.tar.gz (27 kB)
+  Preparing metadata (setup.py): started
+  Preparing metadata (setup.py): finished with status 'done'
+Collecting typed-ast<1.5,>=1.4.0
+  Downloading typed_ast-1.4.3-cp37-cp37m-manylinux1_x86_64.whl (743 kB)
+Building wheels for collected packages: wrapt
+  Building wheel for wrapt (setup.py): started
+  Building wheel for wrapt (setup.py): finished with status 'done'
+  Created wheel for wrapt: filename=wrapt-1.11.2-cp37-cp37m-linux_x86_64.whl size=71333 sha256=e1d944386c536bb7c1afd048bcbafbc6b19e6a31dc12c68ae69452010c6cd6e4
+  Stored in directory: /root/.cache/pip/wheels/23/5f/62/304b411f20be41821465a82bc98baabc5e68c3cdd1eb99db71
+Successfully built wrapt
+Installing collected packages: wrapt, typed-ast, six, numpy, MarkupSafe, lazy-object-proxy, Werkzeug, scipy, pytz, python-dateutil, mccabe, Jinja2, itsdangerous, isort, Click, astroid, scikit-learn, pylint, pandas, Flask
+Successfully installed Click-7.0 Flask-1.0.2 Jinja2-2.10.3 MarkupSafe-1.1.1 Werkzeug-0.16.0 astroid-2.3.3 isort-4.3.21 itsdangerous-1.1.0 lazy-object-proxy-1.4.3 mccabe-0.6.1 numpy-1.17.2 pandas-0.24.2 pylint-2.4.4 python-dateutil-2.8.0 pytz-2019.3 scikit-learn-0.20.3 scipy-1.3.1 six-1.12.0 typed-ast-1.4.3 wrapt-1.11.2
+WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager. It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv
+Removing intermediate container c4a28bb37483
+ ---> 96f14e57bf67
+Step 5/6 : EXPOSE 80
+ ---> Running in 7889d1cba2e3
+Removing intermediate container 7889d1cba2e3
+ ---> 9980fdaf8633
+Step 6/6 : CMD [ "python", "app.py" ]
+ ---> Running in c8c447772465
+Removing intermediate container c8c447772465
+ ---> 8c573fc2752d
+Successfully built 8c573fc2752d
+Successfully tagged abdo:latest
+REPOSITORY      TAG             IMAGE ID       CREATED                  SIZE
+abdo            latest          8c573fc2752d   Less than a second ago   1.36GB
+lambci/lambda   python3.8       094248252696   10 months ago            524MB
+lambci/lambda   nodejs12.x      22a4ada8399c   10 months ago            390MB
+lambci/lambda   nodejs10.x      db93be728e7b   10 months ago            385MB
+lambci/lambda   python3.7       22b4b6fd9260   10 months ago            946MB
+lambci/lambda   python3.6       177c85a10179   10 months ago            894MB
+lambci/lambda   python2.7       d96a01fe4c80   10 months ago            763MB
+lambci/lambda   nodejs8.10      5754fee26e6e   10 months ago            813MB
+python          3.7.3-stretch   34a518642c76   2 years ago              929MB
+ * Serving Flask app "app" (lazy loading)
+ * Environment: production
+   WARNING: Do not use the development server in a production environment.
+   Use a production WSGI server instead.
+ * Debug mode: on
+ * Running on http://0.0.0.0:80/ (Press CTRL+C to quit)
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 194-414-639
+[2021-12-04 09:46:38,113] INFO in app: JSON payload: 
 {'CHAS': {'0': 0}, 'RM': {'0': 6.575}, 'TAX': {'0': 296.0}, 'PTRATIO': {'0': 15.3}, 'B': {'0': 396.9}, 'LSTAT': {'0': 4.98}}
-[2021-12-04 06:53:44,840] INFO in app: Inference payload DataFrame: 
+[2021-12-04 09:46:38,137] INFO in app: Inference payload DataFrame: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-[2021-12-04 06:53:44,852] INFO in app: Scaling Payload: 
+[2021-12-04 09:46:38,150] INFO in app: Scaling Payload: 
    CHAS     RM    TAX  PTRATIO      B  LSTAT
 0     0  6.575  296.0     15.3  396.9   4.98
-172.17.0.1 - - [04/Dec/2021 06:53:44] "POST /predict HTTP/1.1" 200 -
+172.17.0.1 - - [04/Dec/2021 09:46:38] "POST /predict HTTP/1.1" 200 -
